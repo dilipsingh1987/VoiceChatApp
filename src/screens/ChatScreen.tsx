@@ -12,7 +12,7 @@ import {
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import ChatMessage from '../components/ChatMessage';
 import VoiceInput from '../components/VoiceInput';
-import {sendMessageToOpenAI} from '../services/openai';
+import {sendMessageToOpenAI} from '../services/groqai';
 import Tts from 'react-native-tts';
 
 type Message = {

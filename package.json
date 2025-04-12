@@ -15,6 +15,7 @@
     "axios": "^1.8.4",
     "react": "19.0.0",
     "react-native": "0.79.0",
+    "react-native-dotenv": "^3.4.11",
     "react-native-tts": "^4.1.1",
     "react-native-voice": "^0.3.0"
   },

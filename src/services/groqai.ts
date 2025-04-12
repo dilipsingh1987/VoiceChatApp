@@ -28,8 +28,7 @@
 
 // services/openai.ts
 import axios from 'axios';
-
-const GROQ_API_KEY = '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'; // 👈 Replace this with your Groq key
+import {GROQ_API_KEY} from '@env';
 const GROQ_API_URL = 'https://api.groq.com/openai/v1/chat/completions';
 
 export async function sendMessageToOpenAI(message: string): Promise<string> {
@@ -39,8 +38,8 @@ export async function sendMessageToOpenAI(message: string): Promise<string> {
       {
         model: 'llama3-70b-8192', // You can also try 'llama2-70b-chat' or 'gemma-7b-it'
         messages: [
-          { role: 'system', content: 'You are a helpful assistant.' },
-          { role: 'user', content: message },
+          {role: 'system', content: 'You are a helpful assistant.'},
+          {role: 'user', content: message},
         ],
       },
       {
@@ -48,7 +47,7 @@ export async function sendMessageToOpenAI(message: string): Promise<string> {
           Authorization: `Bearer ${GROQ_API_KEY}`,
           'Content-Type': 'application/json',
         },
-      }
+      },
     );
 
     return response.data.choices[0].message.content.trim();
